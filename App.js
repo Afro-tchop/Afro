@@ -4,7 +4,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import MyStackNavigator from "./StackNav/StackNav";
 
-
 const Stack = createStackNavigator();
 
 function App() {
