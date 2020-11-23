@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
+import {LinearGradient} from "expo-linear-gradient";
+
 import { StyleSheet, Image, Text, View, Button, SafeAreaView,TextInput ,TouchableOpacity } from 'react-native';
 
 /* validate = (text) => {
@@ -24,13 +26,30 @@ const Connexion = ({navigation}) => {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1}}>
+        <Image style={styles.top} source={require("../assets/header.png")}/>
             <View style={styles.container}>
-            
+                
 
                 <View style={styles.connect }>
-                  <View style={styles.logo }><Image style={styles.logo2 }  source={require("../assets/first0.png")}/></View>
+                  
+                    <View style={styles.logo }>
+                      <Image style={styles.logo2 }  source={require("../assets/first0.png")}/>
+                      <TouchableOpacity style={styles.logoRow } >
+                        
+                            <Text style={styles.buttDis }  >
+                            Connexion
+                          
+                            </Text>
+                          <LinearGradient style={styles.logoLinear} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+                            <Text style={styles.butt3 } onPress={() => navigation.navigate('Inscription')}>
+                            Inscription
+                          
+                            </Text>
+                          </LinearGradient>
+                      </TouchableOpacity>
+                    </View>
                 
-                      <Text>Entre votre Email</Text>
+                      
                       <View style={styles.email  }>
                         <FontAwesome5 name={'at'} brand style={{bottom:0} } />
                         <TextInput
@@ -43,7 +62,7 @@ const Connexion = ({navigation}) => {
                         />
                       </View>
 
-                      <Text>Entre votre Mot de passe</Text>
+                      
                       <View style={styles.email }>
                       <FontAwesome5 name={'unlock-alt'} brand style={{bottom:0} } />
                       <TextInput
@@ -56,19 +75,22 @@ const Connexion = ({navigation}) => {
                       />
                       </View>
                       <Text>email: {email}, password: {password}  </Text>
-                      <View style={styles.butt }>
-                          <Button 
-                        title="Connexion"
+                      
+                      <TouchableOpacity style={styles.butt}>
+                        <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+                          <Text style={styles.butt2 } onPress={() => navigation.navigate('Inscription')}>
+                          Connexion
                         
-                        onPress={() => navigation.navigate('Inscription')}
-                        />
-                            <Button 
-                            style={styles.button }
-                          title="Continuer sans se Connecter"
+                          </Text>
+                        </LinearGradient>
+                        <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+                            <Text style={styles.butt2 }
+                            onPress={() => navigation.navigate('Drawer')}>
+                                  Continuer sans se Connecter
                           
-                          onPress={() => navigation.navigate('Drawer')}
-                        />
-                      </View>
+                            </Text>
+                        </LinearGradient>
+                      </TouchableOpacity>
                     
                 </View>
                 <TouchableOpacity style={styles.forgot}>
@@ -91,13 +113,22 @@ const styles = StyleSheet.create({
       width: 350,
       height: 80
     },
+    top:{
+      width: 350,
+      height: 130,
+      zIndex: 1
+
+    },
     connect:{
+      backgroundColor:'white',
       width:280,
       height:400,
-      borderWidth: 4,
+      borderWidth: 2,
       borderColor: "#20232a",
       borderRadius:15,
-      padding:10
+      padding:10,
+      zIndex: 2,
+      borderColor:'darkkhaki',
     },
     email:{
       flexDirection:'row',
@@ -109,11 +140,14 @@ const styles = StyleSheet.create({
       marginLeft: 20,
     },
     butt:{
-      flex:1,
+      flex:2,
       flexDirection:'column',
-      justifyContent:"space-around",
+      justifyContent:"center",
+      alignItems:"center",
       height:60,
-      padding:5
+      padding:5,
+      textAlign:'center',
+      alignContent: "center",
     },
     button:{
       width:20
@@ -129,12 +163,62 @@ const styles = StyleSheet.create({
       flex:1,
       height: 60, 
       width: 200,
+      marginBottom:10,
       resizeMode: "contain",
       justifyContent:"center",
       alignItems:"center",
     },
     forgot:{
-      marginTop:30
+      marginTop:20,
+      color:"darkkhaki",
+    },
+    butt2:{
+      textAlign:"center",
+      color:'black',
+     
+    },
+    butt3:{
+      color:'black',
+
+    },
+    logoRow:{
+      marginTop:5,
+      display:"flex",
+      flexDirection:'row',
+      alignItems:"center",
+      justifyContent:"center",
+      
+
+    },
+    logoLinear:{
+      height:30,
+      width:80,
+      marginRight:15,
+      alignItems:'center',
+      display:'flex',
+      justifyContent:'center',
+      borderRadius:20,
+    },
+    logoLinear2:{
+      padding:8,
+
+      width:90,
+      borderRadius:20,
+      margin:10
+    },
+    buttDis:{
+      color:"darkkhaki",
+      height:30,
+      width:100,
+      marginRight:15,
+      alignItems:'center',
+      display:'flex',
+      textAlign:'center',
+      lineHeight:30,
+      justifyContent:'center',
+      borderRadius:20,
+      borderColor:'darkkhaki',
+      borderWidth: 2,
     }
 
 
