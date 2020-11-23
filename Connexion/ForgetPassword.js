@@ -2,15 +2,15 @@ import React from "react";
 import { StyleSheet, Image, Text, View, Button, SafeAreaView } from 'react-native';
 
 
-const Inscription = ({navigation}) => {
+const ForgetPassword = ({navigation}) => {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1}}>
             <View style={styles.container}>
                 <View>
-                  <Text h2>Bienvenue sur la page d'Inscription</Text>
+                  <Text h2>Bienvenue sur la page Mot de Passe oublié</Text>
                   <Button 
-                    title="INSCRIPTION"
+                    title="Mot de Passe oublié"
                     onPress={() => navigation.navigate('Drawer')}
                   />
                 </View>
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
     },
 });
   
-export default Inscription;
+export default ForgetPassword;
