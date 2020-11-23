@@ -39,16 +39,16 @@ const Inscription = ({navigation}) => {
                       <TouchableOpacity onPress={() => navigation.navigate('Connexion')} >
                       <LinearGradient style={styles.buttDis }   colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
                           <Text style={styles.butt3}  >
-                                Se connecter
+                          <FontAwesome5 name={'user-alt'} brand size={36}   />
                             
                           </Text>
                           
                         </LinearGradient>
                       
                         </TouchableOpacity>  
-                         <LinearGradient style={styles.logoLinear} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+                         <LinearGradient style={styles.logoLinear} colors={["rgba(247,234,0,0.10)","rgba(255,0,0,0.30)"]}>
                               <Text style={styles.butt4 } >
-                              S'inscrire
+                              <FontAwesome5 name={'user-alt-slash'} brand size={15}   />
                             
                               </Text>
                             </LinearGradient>
@@ -57,40 +57,54 @@ const Inscription = ({navigation}) => {
                     </View>
                 
                       
-                      <View style={styles.email  }>
-                        <FontAwesome5 name={'user'} brand style={{lineHeight:26} }  />
-                        <TextInput
-                        style={styles.input }
-                          editable
-                          maxLength={40}
-                          autoCapitalize="none"
-                          placeholder="Inscrit ton pseudonyme"
-                          onChangeText={(val)=> setPseudo(val)}
-                        />
-                      </View>
-                      <View style={styles.email  }>
-                        <FontAwesome5 name={'at'} brand style={{lineHeight:26} }  />
-                        <TextInput
-                        style={styles.input }
-                          editable
-                          maxLength={40}
-                          autoCapitalize="none"
-                          placeholder="Ajoute ton e-mail"
-                          onChangeText={(val)=> setEmail(val)}
-                        />
-                      </View>
 
-                      
-                      <View style={styles.email }>
-                      <FontAwesome5 name={'unlock-alt'} brand style={{lineHeight:26} } />
-                      <TextInput
-                      style={styles.input }
-                        editable
-                        maxLength={40}
-                        secureTextEntry={true}
-                        placeholder="Ajoute ton mot de passe"
-                        onChangeText={(val)=> setPassword(val)}
-                      />
+                      <View style={styles.inputMax  }>
+                          <View style={styles.email  }>
+                            <FontAwesome5 name={'user'} brand style={{lineHeight:26} }  />
+                            <TextInput
+                            style={styles.input }
+                              editable
+                              maxLength={40}
+                              autoCapitalize="none"
+                              placeholder="Inscrit ton pseudonyme"
+                              onChangeText={(val)=> setPseudo(val)}
+                            />
+                          </View>
+                          <View style={styles.email  }>
+                            <FontAwesome5 name={'at'} brand style={{lineHeight:26} }  />
+                            <TextInput
+                            style={styles.input }
+                              editable
+                              maxLength={40}
+                              autoCapitalize="none"
+                              placeholder="Ajoute ton e-mail"
+                              onChangeText={(val)=> setEmail(val)}
+                            />
+                          </View>
+
+                          
+                          <View style={styles.email }>
+                          <FontAwesome5 name={'unlock-alt'} brand style={{lineHeight:26} } />
+                          <TextInput
+                          style={styles.input }
+                            editable
+                            maxLength={40}
+                            secureTextEntry={true}
+                            placeholder="Ajoute ton mot de passe"
+                            onChangeText={(val)=> setPassword(val)}
+                          />
+                          </View>
+                          <View style={styles.email }>
+                          <FontAwesome5 name={'unlock-alt'} brand style={{lineHeight:26} } />
+                          <TextInput
+                          style={styles.input }
+                            editable
+                            maxLength={40}
+                            secureTextEntry={true}
+                            placeholder="Confirmez mot de passe"
+                            onChangeText={(val)=> setPassword(val)}
+                          />
+                          </View>
                       </View>
 {/*                       <Text>email: {email}, password: {password}  </Text>
  */}                      
@@ -103,8 +117,8 @@ const Inscription = ({navigation}) => {
                         </LinearGradient>
 
                       </TouchableOpacity>
-
-                </View>
+{/*                       <Text>{{email}}</Text>
+ */}                </View>
 
             </View>
             <Image style={styles.bottom} source={require("../assets/pieds_page1.png")}/>
@@ -118,32 +132,37 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
+      zIndex:2
+
     },
     bottom: {
       width: 350,
       height: 80,
-      zIndex:1
+      marginTop:80
     },
     top:{
-      width: 350,
+      width: 380,
       height: 160,
-      zIndex: 1
+      zIndex: 1,
+      marginLeft:-27
 
     },
     connect:{
       backgroundColor:'rgb(255,250,250)',
       width:280,
-      height:380,
+      height:450,
       borderWidth: 2,
       borderRadius:15,
       padding:10,
-      zIndex: 2,
-      borderColor:'darkkhaki',
+      zIndex: 3,
+      borderColor:'rgba(254,163,71,0.3)',
     },
     email:{
       flexDirection:'row',
        flexWrap:'wrap',
        padding:6,
+       marginBottom:2,
+       marginTop:15
       
     },
     input:{
@@ -151,6 +170,9 @@ const styles = StyleSheet.create({
       width:200,
       backgroundColor:'whitesmoke',
       lineHeight:30,
+    },
+    inputMax:{
+
     },
     butt:{
       flex:1,
@@ -169,17 +191,13 @@ const styles = StyleSheet.create({
       width:250,
       justifyContent:"center",
       alignContent: "center",
-      padding:10
     },
     logo2:{
-      flex:1,
       height: 60, 
       width: 200,
       marginBottom:10,
-      resizeMode: "contain",
       justifyContent:"center",
       alignItems:"center",
-      textAlign:"center"
     },
     forgot:{
       width:180,
@@ -209,6 +227,7 @@ const styles = StyleSheet.create({
       fontSize:11
     },
     butt3:{
+      
       color:'black',
 
     },
@@ -226,13 +245,13 @@ const styles = StyleSheet.create({
 
     },
     logoLinear:{
-      height:30,
-      width:80,
+      height:60,
+      width:60,
       marginRight:15,
       alignItems:'center',
       display:'flex',
       justifyContent:'center',
-      borderRadius:20,
+      borderRadius:60/2,
     },
     logoLinear2:{
       padding:8,
@@ -243,16 +262,16 @@ const styles = StyleSheet.create({
     },
     buttDis:{
       color:"darkkhaki",
-      height:30,
-      width:100,
+      height:80,
+      width:80,
       marginRight:15,
       alignItems:'center',
       display:'flex',
       textAlign:'center',
       lineHeight:30,
       justifyContent:'center',
-      borderRadius:20,
-    }
+      borderRadius: 80/2,
+        }
 
 
 

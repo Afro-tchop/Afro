@@ -62,9 +62,10 @@ const styles = StyleSheet.create({
       zIndex:1
     },
     top:{
-      width: 350,
+      width: 380,
       height: 160,
-      zIndex: 1
+      zIndex: 1,
+      marginLeft:-27
 
     },
     connect:{
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
       flexDirection:'row',
        flexWrap:'wrap',
        padding:6,
+       margin:5
       
     },
     input:{
@@ -121,7 +123,6 @@ const styles = StyleSheet.create({
     forgot:{
         width:180,
         marginTop:20,
-        textAlign:"center",
         display:'flex',
         flexWrap:'wrap',
         flexDirection:'row',

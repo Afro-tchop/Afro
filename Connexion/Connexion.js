@@ -3,7 +3,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import {LinearGradient} from "expo-linear-gradient";
 
-import { StyleSheet, Image, Text, View, Button, SafeAreaView,TextInput ,TouchableOpacity } from 'react-native';
+import { StyleSheet, Image, Text, View, Button, SafeAreaView,TextInput ,TouchableOpacity, ViewComponent } from 'react-native';
 
 /* validate = (text) => {
   console.log(text);
@@ -32,27 +32,27 @@ const Connexion = ({navigation}) => {
 
                 <View style={styles.connect }>
                   
-                    <View style={styles.logo }>
-                      <Image style={styles.logo2 }  source={require("../assets/first0.png")}/>
-                      <View style={styles.logoRow }>
-                      <LinearGradient style={styles.buttDis }   colors={["rgba(247,234,0,0.30)","rgba(255,0,0,0.50)"]}>
-                          <Text style={styles.butt4}  >
-                                Se connecter
+                      <View style={styles.logo }>
+                        <Image style={styles.logo2 }  source={require("../assets/first0.png")}/>
+                        <View style={styles.logoRow }>
+                        <LinearGradient style={styles.buttDis }   colors={["rgba(247,234,0,0.10)","rgba(255,0,0,0.20)"]}>
+                            <Text style={styles.butt4}  >
+                                  Se connecter
+                              
+                            </Text>
                             
-                          </Text>
-                          
-                        </LinearGradient>
-                        <TouchableOpacity  onPress={() => navigation.navigate('Inscription')}>
-                         <LinearGradient  style={styles.logoLinear} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
-                              <Text style={styles.butt3 } >
-                              S'inscrire
-                            
-                              </Text>
-                            </LinearGradient>
-                        </TouchableOpacity>
-                      </View>
+                          </LinearGradient>
+                          <TouchableOpacity  onPress={() => navigation.navigate('Inscription')}>
+                          <LinearGradient  style={styles.logoLinear} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+                                <Text style={styles.butt3 } >
+                                S'inscrire
+                              
+                                </Text>
+                              </LinearGradient>
+                          </TouchableOpacity>
+                        </View>
 
-                    </View>
+                      </View>
                 
                       
                       <View style={styles.email  }>
@@ -62,7 +62,7 @@ const Connexion = ({navigation}) => {
                           editable
                           maxLength={40}
                           autoCapitalize="none"
-                          placeholder="Met l'email"
+                          placeholder="Entrez votre l'email"
                           onChangeText={(val)=> setEmail(val)}
                         />
                       </View>
@@ -75,12 +75,11 @@ const Connexion = ({navigation}) => {
                         editable
                         maxLength={40}
                         secureTextEntry={true}
-                        placeholder="Met Mot de passe"
+                        placeholder="Entrez votre Mot de passe"
                         onChangeText={(val)=> setPassword(val)}
                       />
                       </View>
-{/*                       <Text>email: {email}, password: {password}  </Text>
- */}                      
+          
                       <TouchableOpacity style={styles.butt}>
                         <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
                           <Text style={styles.butt2 } onPress={() => navigation.navigate('Inscription')}>
@@ -96,12 +95,13 @@ const Connexion = ({navigation}) => {
                             </Text>
                         </LinearGradient>
                       </TouchableOpacity>
+                        <View style={styles.forgot} >
+                          <Text style={styles.forgotText} onPress={() => navigation.navigate('ForgetPassword')}> Mot de passe oublié <FontAwesome5 name={'brain'} brand style={{bottom:0} } /></Text>
+                          
+                        </View>
 
                 </View>
-                <TouchableOpacity style={styles.forgot} onPress={() => navigation.navigate('ForgetPassword')}>
-                        <Text style={styles.forgotText} > Mot de passe oublié </Text>
-                        <FontAwesome5 name={'brain'} brand style={{bottom:0} } />
-                      </TouchableOpacity>
+
             </View>
             <Image style={styles.bottom} source={require("../assets/pieds_page1.png")}/>
         </View>
@@ -121,9 +121,10 @@ const styles = StyleSheet.create({
       zIndex:1
     },
     top:{
-      width: 350,
+      width: 380,
       height: 160,
-      zIndex: 1
+      zIndex: 1,
+      marginLeft:-27
 
     },
     connect:{
@@ -178,21 +179,19 @@ const styles = StyleSheet.create({
       textAlign:"center"
     },
     forgot:{
-      width:180,
       marginTop:20,
-      textAlign:"center",
       display:'flex',
       flexDirection:'row',
-      alignItems:'center',
       justifyContent:'center',
-      borderColor:'darkkhaki',
-      borderWidth: 1,
-      backgroundColor: "khaki",
-      borderRadius:15,
       zIndex:4
     },
     forgotText:{
       color:'grey',
+      borderColor:'darkkhaki',
+      borderWidth: 1,
+      backgroundColor: "khaki",
+      borderRadius:15,
+      padding:4
     },
     butt2:{
       textAlign:"center",
