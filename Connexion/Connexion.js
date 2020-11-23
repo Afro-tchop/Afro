@@ -34,24 +34,29 @@ const Connexion = ({navigation}) => {
                   
                     <View style={styles.logo }>
                       <Image style={styles.logo2 }  source={require("../assets/first0.png")}/>
-                      <TouchableOpacity style={styles.logoRow } >
-                        
-                            <Text style={styles.buttDis }  >
-                            Connexion
+                      <View style={styles.logoRow }>
+                      <LinearGradient style={styles.buttDis }   colors={["rgba(247,234,0,0.30)","rgba(255,0,0,0.50)"]}>
+                          <Text style={styles.butt4}  >
+                                Se connecter
+                            
+                          </Text>
                           
-                            </Text>
-                          <LinearGradient style={styles.logoLinear} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
-                            <Text style={styles.butt3 } onPress={() => navigation.navigate('Inscription')}>
-                            Inscription
-                          
-                            </Text>
-                          </LinearGradient>
-                      </TouchableOpacity>
+                        </LinearGradient>
+                        <TouchableOpacity  >
+                         <LinearGradient style={styles.logoLinear} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+                              <Text style={styles.butt3 } onPress={() => navigation.navigate('Inscription')}>
+                              S'inscrire
+                            
+                              </Text>
+                            </LinearGradient>
+                        </TouchableOpacity>
+                      </View>
+
                     </View>
                 
                       
                       <View style={styles.email  }>
-                        <FontAwesome5 name={'at'} brand style={{bottom:0} } />
+                        <FontAwesome5 name={'at'} brand style={{lineHeight:26} }  />
                         <TextInput
                         style={styles.input }
                           editable
@@ -64,7 +69,7 @@ const Connexion = ({navigation}) => {
 
                       
                       <View style={styles.email }>
-                      <FontAwesome5 name={'unlock-alt'} brand style={{bottom:0} } />
+                      <FontAwesome5 name={'unlock-alt'} brand style={{lineHeight:26} } />
                       <TextInput
                       style={styles.input }
                         editable
@@ -74,8 +79,8 @@ const Connexion = ({navigation}) => {
                         onChangeText={(val)=> setPassword(val)}
                       />
                       </View>
-                      <Text>email: {email}, password: {password}  </Text>
-                      
+{/*                       <Text>email: {email}, password: {password}  </Text>
+ */}                      
                       <TouchableOpacity style={styles.butt}>
                         <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
                           <Text style={styles.butt2 } onPress={() => navigation.navigate('Inscription')}>
@@ -84,18 +89,19 @@ const Connexion = ({navigation}) => {
                           </Text>
                         </LinearGradient>
                         <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
-                            <Text style={styles.butt2 }
+                            <Text style={styles.noConnect }
                             onPress={() => navigation.navigate('Drawer')}>
                                   Continuer sans se Connecter
                           
                             </Text>
                         </LinearGradient>
                       </TouchableOpacity>
-                    
+
                 </View>
                 <TouchableOpacity style={styles.forgot}>
-                  <Text onPress={() => navigation.navigate('ForgetPassword')}> Mot de passe oublié</Text>
-                </TouchableOpacity>
+                        <Text style={styles.forgotText} onPress={() => navigation.navigate('ForgetPassword')}> Mot de passe oublié </Text>
+                        <FontAwesome5 name={'brain'} brand style={{bottom:0} } />
+                      </TouchableOpacity>
             </View>
             <Image style={styles.bottom} source={require("../assets/pieds_page1.png")}/>
         </View>
@@ -111,20 +117,20 @@ const styles = StyleSheet.create({
     },
     bottom: {
       width: 350,
-      height: 80
+      height: 80,
+      zIndex:1
     },
     top:{
       width: 350,
-      height: 130,
+      height: 160,
       zIndex: 1
 
     },
     connect:{
-      backgroundColor:'white',
+      backgroundColor:'rgb(255,250,250)',
       width:280,
-      height:400,
+      height:380,
       borderWidth: 2,
-      borderColor: "#20232a",
       borderRadius:15,
       padding:10,
       zIndex: 2,
@@ -137,14 +143,15 @@ const styles = StyleSheet.create({
       
     },
     input:{
-      marginLeft: 20,
+      marginLeft: 20,/* 
+      borderBottomWidth : 1.0,
+      height:40 */
     },
     butt:{
-      flex:2,
+      flex:1,
       flexDirection:'column',
       justifyContent:"center",
       alignItems:"center",
-      height:60,
       padding:5,
       textAlign:'center',
       alignContent: "center",
@@ -167,18 +174,41 @@ const styles = StyleSheet.create({
       resizeMode: "contain",
       justifyContent:"center",
       alignItems:"center",
+      textAlign:"center"
     },
     forgot:{
+      width:180,
       marginTop:20,
-      color:"darkkhaki",
+      textAlign:"center",
+      display:'flex',
+      flexDirection:'row',
+      alignItems:'center',
+      justifyContent:'center',
+      borderColor:'darkkhaki',
+      borderWidth: 1,
+      backgroundColor: "khaki",
+      borderRadius:15,
+      zIndex:4
+    },
+    forgotText:{
+      color:'grey',
     },
     butt2:{
       textAlign:"center",
       color:'black',
      
     },
+    noConnect:{
+      textAlign:"center",
+      color:'white',
+      fontSize:11
+    },
     butt3:{
       color:'black',
+
+    },
+    butt4:{
+      color:'grey',
 
     },
     logoRow:{
@@ -217,8 +247,6 @@ const styles = StyleSheet.create({
       lineHeight:30,
       justifyContent:'center',
       borderRadius:20,
-      borderColor:'darkkhaki',
-      borderWidth: 2,
     }
 
 

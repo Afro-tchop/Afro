@@ -97,7 +97,7 @@ const DrawerContent = props => {
         <DrawerItem 
           label="Se deconnecter"
           labelStyle={{ marginLeft:-10, marginRight: -45, fontStyle: "italic", fontSize: 20}}
-          onPress={() => props.navigation.navigate("Connexion")}
+          onPress={() => props.navigation.navigate("Inscription")}
           icon={() => <AntDesign size={25} color="orange" name="logout"/>}
         />
       </View>
