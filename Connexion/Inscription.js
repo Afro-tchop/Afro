@@ -36,9 +36,9 @@ const Inscription = ({navigation}) => {
                     <View style={styles.logo }>
                       <Image style={styles.logo2 }  source={require("../assets/first0.png")}/>
                       <View style={styles.logoRow }>
-                      <TouchableOpacity  >
+                      <TouchableOpacity onPress={() => navigation.navigate('Connexion')} >
                       <LinearGradient style={styles.buttDis }   colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
-                          <Text style={styles.butt3}  onPress={() => navigation.navigate('Connexion')}>
+                          <Text style={styles.butt3}  >
                                 Se connecter
                             
                           </Text>
@@ -94,9 +94,9 @@ const Inscription = ({navigation}) => {
                       </View>
 {/*                       <Text>email: {email}, password: {password}  </Text>
  */}                      
-                      <TouchableOpacity style={styles.butt}>
+                      <TouchableOpacity onPress={() => navigation.navigate('Connexion')} style={styles.butt}>
                         <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
-                          <Text style={styles.butt2 } onPress={() => navigation.navigate('Connexion')}>
+                          <Text style={styles.butt2 } >
                           Inscription
                         
                           </Text>
@@ -148,7 +148,9 @@ const styles = StyleSheet.create({
     },
     input:{
       marginLeft: 20,
-      width:200
+      width:200,
+      backgroundColor:'whitesmoke',
+      lineHeight:30,
     },
     butt:{
       flex:1,

@@ -42,9 +42,9 @@ const Connexion = ({navigation}) => {
                           </Text>
                           
                         </LinearGradient>
-                        <TouchableOpacity  >
-                         <LinearGradient style={styles.logoLinear} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
-                              <Text style={styles.butt3 } onPress={() => navigation.navigate('Inscription')}>
+                        <TouchableOpacity  onPress={() => navigation.navigate('Inscription')}>
+                         <LinearGradient  style={styles.logoLinear} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+                              <Text style={styles.butt3 } >
                               S'inscrire
                             
                               </Text>
@@ -98,8 +98,8 @@ const Connexion = ({navigation}) => {
                       </TouchableOpacity>
 
                 </View>
-                <TouchableOpacity style={styles.forgot}>
-                        <Text style={styles.forgotText} onPress={() => navigation.navigate('ForgetPassword')}> Mot de passe oublié </Text>
+                <TouchableOpacity style={styles.forgot} onPress={() => navigation.navigate('ForgetPassword')}>
+                        <Text style={styles.forgotText} > Mot de passe oublié </Text>
                         <FontAwesome5 name={'brain'} brand style={{bottom:0} } />
                       </TouchableOpacity>
             </View>
@@ -143,9 +143,10 @@ const styles = StyleSheet.create({
       
     },
     input:{
-      marginLeft: 20,/* 
-      borderBottomWidth : 1.0,
-      height:40 */
+      marginLeft: 20,
+      width:200,
+      backgroundColor:'whitesmoke',
+      lineHeight:30,
     },
     butt:{
       flex:1,
