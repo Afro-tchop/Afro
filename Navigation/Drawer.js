@@ -32,7 +32,6 @@ const Screens = ({navigation, style}) => {
       //style du header des screens
       screenOptions={{
         headerStyle: { height:100},
-        headerTitle: null,
         // Ajout de deux buttons header button pour ouvrir la navigation
         headerLeft: () => (
         <AntDesign size={30} style={styles.icon} name="bars" onPress={() => navigation.openDrawer()}/>
@@ -96,7 +95,7 @@ const DrawerContent = props => {
           />
           <DrawerItem
             label="Recettes"
-            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15}}
+            labelStyle={{ marginLeft: -9, marginRight: -10, fontWeight:"bold", fontSize: 15}}
             onPress={() => props.navigation.navigate("Recettes")}
             icon={() => <FontAwesome5 size={20} color="green" name="receipt"/>}
           />
@@ -113,14 +112,13 @@ const DrawerContent = props => {
             icon={() => <AntDesign size={20} color="green" name="book"/>}
           />
           <DrawerItem
-            label="Mentions légales"
-            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15, display:"none"}}
-            onPress={() => props.navigation.navigate("ListeRecettes")}
+            label=""
+            labelStyle={{ display:"none"}}
           />
           <DrawerItem
-            label="Mentions légales"
-            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15, display:"none"}}
-            onPress={() => props.navigation.navigate("RecettesDetails")}
+            label=""
+            labelStyle={{display:"none"}}
+            active="false"
           />
         </View>
       </View>
@@ -181,7 +179,7 @@ export default () => {
     const screenStyles = {borderRadius, transform: [{scale}]};
 
     return (
-      <LinearGradient style={{flex:1}} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+      <LinearGradient style={{flex:1}} colors={["rgba(255,140,0,0.70)","rgba(255,0,0,0.65)"]}>
         <Drawer.Navigator 
             //the drawer -> screen animated should be slide
             drawerType="slide"

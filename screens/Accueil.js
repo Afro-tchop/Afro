@@ -11,15 +11,15 @@ const Messages =({navigation}) => {
                     <View>
                         {/* Input pour faire une recherche */}
                         <View style={{flexDirection:"row", justifyContent:"center", marginTop:40}}>
-                        <AntDesign size={15} color="black" name="search1"/>
-                        <TextInput
-                            style={styles.input}
-                            editable
-                            autoCapitalize="none"
-                            placeholder="je recherche..."
-                            onChangeText={(val)=>setRecherche(val)}
-                        />
-                        {/* <Text>{recherche}</Text> */}                         
+                            <AntDesign size={25} color="black" name="search1"/>
+                            <TextInput
+                                style={styles.input}
+                                editable
+                                autoCapitalize="none"
+                                placeholder="je recherche..."
+                                onChangeText={(val)=>setRecherche(val)}
+                            />
+                            {/* <Text>{recherche}</Text> */}                         
                         </View>
 
                         <View style={{flex: 1, flexDirection: "row",flexWrap: "wrap", justifyContent: "center"}}>

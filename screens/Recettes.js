@@ -1,5 +1,6 @@
 import React, {useState}  from "react";
 import { StyleSheet, Text, View, Image, SafeAreaView, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import {Evillcons, AntDesign} from "@expo/vector-icons";
 
 const Contact = ({navigation}) => {
     const [recherche, setRecherche] = useState(' ');
@@ -8,41 +9,43 @@ const Contact = ({navigation}) => {
             <View style={{ flex: 1}}>
                 <View style={styles.container}>
                     <View>
-                        <Text h2 style={{textAlign: "center", marginTop: 30}}>RECETTES PAR PAYS</Text>
-                        {/* Input pour faire une recherche */}
-                        <TextInput
-                            style={styles.input}
-                            editable
-                            autoCapitalize="none"
-                            placeholder="je recherche..."
-                            onChangeText={(val)=>setRecherche(val)}
-                        />
-                        {/* <Text>{recherche}</Text> */}
-                        <View style={{flex: 1, flexDirection: "row", flexWrap: "wrap", justifyContent: "center"}}>
-                                {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
-                                <TouchableOpacity  onPress={() => navigation.navigate("ListeRecettes")} >
-                            <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/cameroun.jpg")}><Text style={styles.text}>CAMEROUN</Text></ImageBackground>
-                        </TouchableOpacity>
+                        <Text h2 style={{textAlign: "center", marginTop: 30, fontSize:25, }}>RECETTES  PAR  PAYS</Text>
+                        <View style={{flexDirection:"row", justifyContent:"center", marginTop:40}}>
+                            <AntDesign size={25} color="black" name="search1"/>
+                            <TextInput
+                                style={styles.input}
+                                editable
+                                autoCapitalize="none"
+                                placeholder="je recherche..."
+                                onChangeText={(val)=>setRecherche(val)}
+                            />
+                            {/* <Text>{recherche}</Text> */}                         
+                        </View>
+                        <View style={{flex: 1, flexDirection: "row", flexWrap: "wrap", justifyContent: "center", marginTop: 25}}>
+                            {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
+                            <TouchableOpacity  onPress={() => navigation.navigate("ListeRecettes")} >
+                                <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/cameroun.jpg")}><Text style={styles.text}>CAMEROUN</Text></ImageBackground>
+                            </TouchableOpacity>
 
-                        {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
-                        <TouchableOpacity  onPress={() => navigation.navigate("Compte")} >
-                            <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/cote-ivoire.jpg")}><Text style={styles.text}>COTE D'IVOIRE</Text></ImageBackground>
-                        </TouchableOpacity>
+                            {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
+                            <TouchableOpacity  onPress={() => navigation.navigate("Compte")} >
+                                <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/cote-ivoire.jpg")}><Text style={styles.text}>COTE D'IVOIRE</Text></ImageBackground>
+                            </TouchableOpacity>
 
-                        {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
-                        <TouchableOpacity  onPress={() => navigation.navigate("Compte")} >
-                            <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/senegal.jpg")}><Text style={styles.text}>SENEGAL</Text></ImageBackground>
-                        </TouchableOpacity>
+                            {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
+                            <TouchableOpacity  onPress={() => navigation.navigate("Compte")} >
+                                <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/senegal.jpg")}><Text style={styles.text}>SENEGAL</Text></ImageBackground>
+                            </TouchableOpacity>
 
-                        {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
-                        <TouchableOpacity  onPress={() => navigation.navigate("Compte")} >
-                            <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/ghana.jpg")}><Text style={styles.text}>GHANA</Text></ImageBackground>
-                        </TouchableOpacity>
+                            {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
+                            <TouchableOpacity  onPress={() => navigation.navigate("Compte")} >
+                                <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/ghana.jpg")}><Text style={styles.text}>GHANA</Text></ImageBackground>
+                            </TouchableOpacity>
 
-                        {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
-                        <TouchableOpacity  onPress={() => navigation.navigate("Compte")} >
-                            <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/congo.jpg")}><Text style={styles.text}>CONGO</Text></ImageBackground>
-                        </TouchableOpacity>
+                            {/* rubrique pays avec un onPress permettant de se diriger vers la page correspondante */}
+                            <TouchableOpacity  onPress={() => navigation.navigate("Compte")} >
+                                <ImageBackground blurRadius={1.5} style={styles.image} source={require("../assets/congo.jpg")}><Text style={styles.text}>CONGO</Text></ImageBackground>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
@@ -63,13 +66,12 @@ const styles = StyleSheet.create({
         height: 40
     },
     input: {
-        height: 30,
-        width: 300,
-        margin: 30,
-        borderWidth: 1,
+        height: 23,
+        width: 200,
+        borderBottomWidth: 1,
+        marginHorizontal: 10,
         borderRadius: 1,
         borderColor: "gray",
-        textAlign: "center",
     },
     image: {
         width: 150,
