@@ -6,8 +6,9 @@ const Connexion = ({navigation}) => {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1}}>
+          <Image style={styles.top} source={require("../assets/header.png")}/>      
             <View style={styles.container}>
-                <View>
+                <View style={styles.VI}>
                   <Text h2>Bienvenue sur la page de connexion</Text>
                   <Button 
                     title="Connexion"
@@ -15,7 +16,9 @@ const Connexion = ({navigation}) => {
                   />
                 </View>
             </View>
+            <View>
             <Image style={styles.bottom} source={require("../assets/pieds_page1.png")}/>
+            </View>
         </View>
       </SafeAreaView>
     );
@@ -29,8 +32,13 @@ const styles = StyleSheet.create({
     },
     bottom: {
       width: 350,
-      height: 80
+      height: 80,
     },
+    top: {
+      width: 380,
+      height: 160,
+      marginLeft: -27,
+    }
 });
   
 export default Connexion;

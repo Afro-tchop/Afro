@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Image, Text, View, Button } from 'react-native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { createStackNavigator} from '@react-navigation/stack';
-import {Entypo, AntDesign} from "@expo/vector-icons";
+import {Entypo, AntDesign, MaterialIcons, FontAwesome5} from "@expo/vector-icons";
 import {LinearGradient} from "expo-linear-gradient";
 
 //import font icone
@@ -10,9 +10,13 @@ import {LinearGradient} from "expo-linear-gradient";
 // import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 //import the screens
-import Dashboard from "../screens/Dashboard";
-import Messages from "../screens/Messages";
-import Contact from "../screens/Contact";
+import Compte from "../screens/Compte";
+import Accueil from "../screens/Accueil";
+import Recettes from "../screens/Recettes";
+import Restaurants from "../screens/Restaurants";
+import Mentions from "../screens/Mentions";
+import ListeRecettes from "../screens/ListeRecettes";
+import RecettesDetails from "../screens/RecettesDetails";
 import Animated from "react-native-reanimated";
 
 const Drawer = createDrawerNavigator();
@@ -24,6 +28,7 @@ const Screens = ({navigation, style}) => {
     <Animated.View style={[{flex: 1, overflow:"hidden"}, style]}>
       {/* Création de stacks pour chaque screen */}
       <Stack.Navigator
+      initialRouteName= "Accueil"
       //style du header des screens
       screenOptions={{
         headerStyle: { height:100},
@@ -42,9 +47,13 @@ const Screens = ({navigation, style}) => {
         headerTitleStyle: {height:40},
         headerTitleContainerStyle: {height:20}
       }}>
-        <Stack.Screen name="Dashboard" component={Dashboard}/>
-        <Stack.Screen name="Messages" component={Messages} />
-        <Stack.Screen name="Contact" component={Contact} />
+        <Stack.Screen name="Compte" component={Compte}/>
+        <Stack.Screen name="Accueil" component={Accueil} />
+        <Stack.Screen name="Recettes" component={Recettes} />
+        <Stack.Screen name="Restaurants" component={Restaurants} />
+        <Stack.Screen name="Mentions" component={Mentions} />
+        <Stack.Screen name="ListeRecettes" component={ListeRecettes}/>
+        <Stack.Screen name="RecettesDetails" component={RecettesDetails}/>
       </Stack.Navigator>
     </Animated.View>
   )
@@ -75,25 +84,53 @@ const DrawerContent = props => {
         <View>
           <DrawerItem
             label="Mon compte"
-            labelStyle={{ marginRight: -25, fontWeight:"bold", fontSize: 20}}
-            onPress={() => props.navigation.navigate("Dashboard")}
-            icon={() => <AntDesign size={25} color="green" name="user"/>}
+            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15}}
+            onPress={() => props.navigation.navigate("Compte")}
+            icon={() => <AntDesign size={20} color="green" name="user"/>}
           />
           <DrawerItem
             label="Accueil"
-            labelStyle={{ marginRight: -25, fontWeight:"bold", fontSize: 20}}
-            onPress={() => props.navigation.navigate("Messages")}
-            icon={() => <AntDesign size={25} color="green" name="bank"/>}
+            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15}}
+            onPress={() => props.navigation.navigate("Accueil")}
+            icon={() => <AntDesign size={20} color="green" name="home"/>}
           />
           <DrawerItem
-            label="Recette"
-            labelStyle={{ marginRight: -25, fontWeight:"bold", fontSize: 20}}
-            onPress={() => props.navigation.navigate("Contact")}
-            icon={() => <AntDesign size={25} color="green" name="isv"/>}
+            label="Recettes"
+            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15}}
+            onPress={() => props.navigation.navigate("Recettes")}
+            icon={() => <FontAwesome5 size={20} color="green" name="receipt"/>}
+          />
+          <DrawerItem
+            label="Restaurants"
+            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15}}
+            onPress={() => props.navigation.navigate("Restaurants")}
+            icon={() => <MaterialIcons size={20} color="green" name="restaurant"/>}
+          />
+          <DrawerItem
+            label="Mentions légales"
+            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15}}
+            onPress={() => props.navigation.navigate("Mentions")}
+            icon={() => <AntDesign size={20} color="green" name="book"/>}
+          />
+          <DrawerItem
+            label="Mentions légales"
+            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15, display:"none"}}
+            onPress={() => props.navigation.navigate("ListeRecettes")}
+          />
+          <DrawerItem
+            label="Mentions légales"
+            labelStyle={{ marginLeft: -15, marginRight: -10, fontWeight:"bold", fontSize: 15, display:"none"}}
+            onPress={() => props.navigation.navigate("RecettesDetails")}
           />
         </View>
       </View>
       <View style={{flex:1, justifyContent:"flex-end"}}>
+        {/* <DrawerItem 
+          label="Se deconnecter"
+          labelStyle={{ marginLeft:-10, marginRight: -45, fontStyle: "italic", fontSize: 20}}
+          onPress={() => props.navigation.navigate("Connexion")}
+          icon={() => <AntDesign size={25} color="orange" name="logout"/>}
+        /> */}
         <DrawerItem 
           label="Se deconnecter"
           labelStyle={{ marginLeft:-10, marginRight: -45, fontStyle: "italic", fontSize: 20}}

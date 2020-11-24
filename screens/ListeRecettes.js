@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
 
-const Messages = () => {
+const ListeRecettes = ({navigation}) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View style={{ flex: 1}}>
                 <View style={styles.container}>
                     <View>
-                        <Text h2>Accueil</Text>
+                        <Text h2 onPress={() => navigation.navigate('RecettesDetails')}>Listes de Recettes</Text>
                     </View>
                 </View>
                 <Image style={styles.bottom1} source={require("../assets/pieds_page2.png")}/>
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
     },
   });
   
-export default Messages;
+export default ListeRecettes;

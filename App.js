@@ -6,7 +6,6 @@ import MyStackNavigator from "./StackNav/StackNav";
 
 const Stack = createStackNavigator();
 
-
 function App() {
   return (
     <NavigationContainer>
