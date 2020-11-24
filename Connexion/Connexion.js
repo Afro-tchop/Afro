@@ -32,25 +32,28 @@ const Connexion = ({navigation}) => {
 
                 <View style={styles.connect }>
                   
-                      <View style={styles.logo }>
+                    <View style={styles.logo }>
                         <Image style={styles.logo2 }  source={require("../assets/first0.png")}/>
                         <View style={styles.logoRow }>
-                        <LinearGradient style={styles.buttDis }   colors={["rgba(247,234,0,0.10)","rgba(255,0,0,0.20)"]}>
-                            <Text style={styles.butt4}  >
-                                  Se connecter
-                              
-                            </Text>
-                            
-                          </LinearGradient>
+                          <View>
+                            <LinearGradient style={styles.buttDis }   colors={["rgba(247,234,0,0.60)","rgba(255,0,0,0.80)"]}>
+                                <Text style={styles.butt4}  >
+                                  <FontAwesome5 name={'user-alt'} brand size={28}   />
+                                </Text>
+                            </LinearGradient>
+                            <Text>Se connecter</Text>
+                          </View>
                           <TouchableOpacity  onPress={() => navigation.navigate('Inscription')}>
-                          <LinearGradient  style={styles.logoLinear} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+                            <LinearGradient  style={styles.logoLinear} colors={["rgba(247,234,0,0.10)","rgba(255,0,0,0.30)"]}>
                                 <Text style={styles.butt3 } >
-                                S'inscrire
+                                    <FontAwesome5 name={'user-alt-slash'} brand size={28}   />
+
                               
                                 </Text>
                               </LinearGradient>
+                              <Text>S'inscrire</Text>
                           </TouchableOpacity>
-                        </View>
+                    </View>
 
                       </View>
                 
@@ -118,7 +121,9 @@ const styles = StyleSheet.create({
     bottom: {
       width: 350,
       height: 80,
-      zIndex:1
+      zIndex:1,
+      
+      marginTop:80
     },
     top:{
       width: 380,
@@ -130,12 +135,12 @@ const styles = StyleSheet.create({
     connect:{
       backgroundColor:'rgb(255,250,250)',
       width:280,
-      height:380,
+      height:450,
       borderWidth: 2,
       borderRadius:15,
       padding:10,
       zIndex: 2,
-      borderColor:'darkkhaki',
+      borderColor:'rgba(254,163,71,0.3)',
     },
     email:{
       flexDirection:'row',
@@ -176,7 +181,6 @@ const styles = StyleSheet.create({
       resizeMode: "contain",
       justifyContent:"center",
       alignItems:"center",
-      textAlign:"center"
     },
     forgot:{
       marginTop:20,
@@ -216,18 +220,18 @@ const styles = StyleSheet.create({
       display:"flex",
       flexDirection:'row',
       alignItems:"center",
-      justifyContent:"center",
+      justifyContent:"space-around",
       
 
     },
     logoLinear:{
-      height:30,
-      width:80,
+      height:70,
+      width:70,
       marginRight:15,
       alignItems:'center',
       display:'flex',
       justifyContent:'center',
-      borderRadius:20,
+      borderRadius:70/2,
     },
     logoLinear2:{
       padding:8,
@@ -237,16 +241,15 @@ const styles = StyleSheet.create({
       margin:10
     },
     buttDis:{
-      color:"darkkhaki",
-      height:30,
-      width:100,
+      height:70,
+      width:70,
       marginRight:15,
       alignItems:'center',
       display:'flex',
       textAlign:'center',
       lineHeight:30,
       justifyContent:'center',
-      borderRadius:20,
+      borderRadius:70,
     }
 
 

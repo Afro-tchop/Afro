@@ -34,15 +34,15 @@ const ForgetPassword = ({navigation}) => {
                           onChangeText={(val)=> setEmail(val)}
                         />
                       </View>
+                      <TouchableOpacity style={styles.forgot} onPress={() => navigation.navigate('Connexion')}>
+                        <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
 
+                            <Text style={styles.forgotText} > Récupérer Mot de passe </Text>
+                            <FontAwesome5 name={'brain'} brand style={{bottom:0, lineHeight:28} } />
+                        </LinearGradient>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.forgot} onPress={() => navigation.navigate('Inscription')}>
-                <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
 
-                    <Text style={styles.forgotText} > Récupérer Mot de passe </Text>
-                    <FontAwesome5 name={'brain'} brand style={{bottom:0, lineHeight:28} } />
-                </LinearGradient>
-                </TouchableOpacity>
             </View>
             <Image style={styles.bottom} source={require("../assets/pieds_page1.png")}/>
         </View>
@@ -71,12 +71,12 @@ const styles = StyleSheet.create({
     connect:{
       backgroundColor:'rgb(255,250,250)',
       width:280,
-      height:150,
+      height:200,
       borderWidth: 2,
       borderRadius:15,
       padding:10,
       zIndex: 2,
-      borderColor:'darkkhaki',
+      borderColor:'rgba(254,163,71,0.3)',
     },
     email:{
       flexDirection:'row',
@@ -96,40 +96,34 @@ const styles = StyleSheet.create({
       flex:1,
       width:250,
       justifyContent:"center",
-      alignContent: "center",
+      alignItems: "center",
       padding:10
     },
     logo2:{
       flex:1,
-      height: 60, 
-      width: 200,
+      width:100,
+      height:90,
       marginBottom:10,
-      resizeMode: "contain",
       justifyContent:"center",
       alignItems:"center",
-      textAlign:"center"
     },
     logoLinear2:{
         padding:4,
         display:'flex',
         flexDirection:'row',
-        width:200,
         borderRadius:20,
         margin:10,
         justifyContent:"center",
         alignItems:"center",
-        textAlign:"center"
       },
     forgot:{
-        width:180,
         marginTop:20,
         display:'flex',
         flexWrap:'wrap',
         flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'center',
         borderRadius:15,
-        zIndex:4
+        justifyContent:"center",
+        alignItems:'center'
       },
 
 
