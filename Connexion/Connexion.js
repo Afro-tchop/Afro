@@ -135,10 +135,12 @@ const styles = StyleSheet.create({
     connect:{
       backgroundColor:'rgb(255,250,250)',
       width:280,
-      height:450,
+      height:470,
       borderWidth: 2,
       borderRadius:15,
-      padding:10,
+      paddingTop:40,
+      paddingLeft:10,
+      paddingBottom:30,
       zIndex: 2,
       borderColor:'rgba(254,163,71,0.3)',
     },
@@ -175,12 +177,9 @@ const styles = StyleSheet.create({
     },
     logo2:{
       flex:1,
-      height: 60, 
-      width: 200,
-      marginBottom:10,
-      resizeMode: "contain",
-      justifyContent:"center",
-      alignItems:"center",
+      height: 30, 
+      width: 100,
+      alignSelf:"center"
     },
     forgot:{
       marginTop:20,

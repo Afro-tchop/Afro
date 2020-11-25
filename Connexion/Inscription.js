@@ -62,9 +62,6 @@ const Inscription = ({navigation}) => {
                     </View>
 
                     </View>
-                
-                      
-
                     <View style={styles.inputMax  }>
                         <View style={styles.email  }>
                           <FontAwesome5 name={'user'} brand style={{lineHeight:26} }  />
@@ -157,10 +154,10 @@ const styles = StyleSheet.create({
     connect:{
       backgroundColor:'rgb(255,250,250)',
       width:280,
-      height:450,
+      height:470,
       borderWidth: 2,
       borderRadius:15,
-      paddingTop:60,
+      paddingTop:40,
       paddingLeft:10,
       zIndex: 3,
       borderColor:'rgba(254,163,71,0.3)',
@@ -203,7 +200,8 @@ const styles = StyleSheet.create({
     },
     logo2:{
       height: 30, 
-      width: 120,
+      width: 100,
+      justifyContent:"center",
     },
     forgot:{
       width:180,
