@@ -29,103 +29,98 @@ const Inscription = ({navigation}) => {
         <View style={{ flex: 1}}>
         <Image style={styles.top} source={require("../assets/header.png")}/>
             <View style={styles.container}>
-                
-
-                <View style={styles.connect }>
-                  <View style={{ flex: 1, flexDirection
-                  :"column",flexWrap:"wrap", }}>
-                    <View style={styles.logo }>
-                      <View style={{alignItems:"center"} }>
-                          <Image style={styles.logo2 }  source={require("../assets/first0.png")}/>
-
-                      </View>
-                      <View style={styles.logoRow }>
+                  {/* Conteneur des inputs, logo et bouton de validation */}
+              <View style={styles.connect }>
+                <View style={{ flex: 1, flexDirection:"column",flexWrap:"wrap", }}>
+                      {/* conteneur du logos et de boutton de switch de navigation */}
+                  <View style={styles.logo }>
+                    <View style={{alignItems:"center"} }>
+                        <Image style={styles.logo2 }  source={require("../assets/first0.png")}/>
+                    </View>
+                    <View style={styles.logoRow }>
                       <TouchableOpacity onPress={() => navigation.navigate('Connexion')} >
                         <LinearGradient style={styles.buttDis }   colors={["rgba(247,234,0,0.10)","rgba(255,0,0,0.30)"]}>
                           <Text style={styles.butt3}  >
-                          <FontAwesome5 name={'user-alt'} brand size={28}   />
-                            
+                            <FontAwesome5 name={'user-alt'} brand size={20}   />
                           </Text>
-                          
                         </LinearGradient>
                         <Text>Se connecter</Text>
                       </TouchableOpacity>  
-                      <View>
-                        <LinearGradient style={styles.logoLinear} colors={["rgba(247,234,0,0.60)","rgba(255,0,0,0.80)"]}>
-                              <Text style={styles.butt4 } >
-                              <FontAwesome5 name={'user-alt-slash'} brand size={28}   />
-                                  
-                              </Text>
-                        </LinearGradient>
-                        <Text>S'inscrire</Text>
-                      </View>
-                    </View>
-
-                    </View>
-                    <View style={styles.inputMax  }>
-                        <View style={styles.email  }>
-                          <FontAwesome5 name={'user'} brand style={{lineHeight:26} }  />
-                          <TextInput
-                          style={styles.input }
-                            editable
-                            maxLength={40}
-                            autoCapitalize="none"
-                            placeholder="Inscrit ton pseudonyme"
-                            onChangeText={(val)=> setPseudo(val)}
-                          />
-                        </View>
-                        <View style={styles.email  }>
-                          <FontAwesome5 name={'at'} brand style={{lineHeight:26} }  />
-                          <TextInput
-                          style={styles.input }
-                            editable
-                            maxLength={40}
-                            autoCapitalize="none"
-                            placeholder="Ajoute ton e-mail"
-                            onChangeText={(val)=> setEmail(val)}
-                          />
-                        </View>
-
-                        
-                        <View style={styles.email }>
-                        <FontAwesome5 name={'unlock-alt'} brand style={{lineHeight:26} } />
-                        <TextInput
-                        style={styles.input }
-                          editable
-                          maxLength={40}
-                          secureTextEntry={true}
-                          placeholder="Ajoute ton mot de passe"
-                          onChangeText={(val)=> setPassword(val)}
-                        />
-                        </View>
-                        <View style={styles.email }>
-                        <FontAwesome5 name={'unlock-alt'} brand style={{lineHeight:26} } />
-                        <TextInput
-                        style={styles.input }
-                          editable
-                          maxLength={40}
-                          secureTextEntry={true}
-                          placeholder="Confirmez mot de passe"
-                          onChangeText={(val)=> setPassword(val)}
-                        />
-                        </View>
-                      </View>
-{/*                       <Text>email: {email}, password: {password}  </Text>
- */}                   
-                  </View>   
-                      <TouchableOpacity onPress={() => navigation.navigate('Connexion')} style={styles.butt}>
-                        <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
-                          <Text style={styles.butt2 } >
-                          Inscription
-                        
+                    <View>
+                      <LinearGradient style={styles.logoLinear} colors={["rgba(247,234,0,0.60)","rgba(255,0,0,0.80)"]}>
+                          <Text style={styles.butt4 } >
+                            <FontAwesome5 name={'user-alt-slash'} brand size={33}   />
                           </Text>
-                        </LinearGradient>
-
-                      </TouchableOpacity>
-         </View>
-
+                      </LinearGradient>
+                      <Text>S'inscrire</Text>
+                    </View>
+                  </View>
+                </View>
+                    {/* La partie des inputs se trouve ici */}
+                <View style={styles.inputMax  }>
+                  <View style={styles.email  }>
+                    <FontAwesome5 name={'user'} brand style={{lineHeight:26} }  />
+                    <TextInput
+                    style={styles.input }
+                      editable
+                      maxLength={40}
+                      autoCapitalize="none"
+                      placeholder="Inscrit ton pseudonyme"
+                      onChangeText={(val)=> setPseudo(val)}
+                    />
+                  </View>
+                  <View style={styles.email  }>
+                    <FontAwesome5 name={'at'} brand style={{lineHeight:26} }  />
+                    <TextInput
+                    style={styles.input }
+                      editable
+                      maxLength={40}
+                      autoCapitalize="none"
+                      placeholder="Ajoute ton e-mail"
+                      onChangeText={(val)=> setEmail(val)}
+                    />
+                  </View>
+                  <View style={styles.email }>
+                    <FontAwesome5 name={'unlock-alt'} brand style={{lineHeight:26} } />
+                    <TextInput
+                    style={styles.input }
+                      editable
+                      maxLength={40}
+                      autoCapitalize="none"
+                      secureTextEntry={true}
+                      placeholder="Ajoute ton mot de passe"
+                      onChangeText={(val)=> setPassword(val)}
+                    />
+                  </View>
+                  <View style={styles.email }>
+                    <FontAwesome5 name={'unlock-alt'} brand style={{lineHeight:26} } />
+                    <TextInput
+                    style={styles.input }
+                      editable
+                      maxLength={40}
+                      autoCapitalize="none"
+                      secureTextEntry={true}
+                      placeholder="Confirmez mot de passe"
+                      onChangeText={(val)=> setPassword(val)}
+                    />
+                  </View>
+                </View>
+                    {/*                       <Text>email: {email}, password: {password}  </Text>
+                    */}                   
+                
+                  <View style={styles.butt}>
+                    <LinearGradient style={styles.logoLinear2} colors={["rgba(247,234,0,0.70)","rgba(255,0,0,0.80)"]}>
+                      <Text style={styles.butt2 } onPress={() => navigation.navigate('Connexion')} >
+                      Inscription
+                    
+                      </Text>
+                    </LinearGradient>
+                  </View> 
+              </View>
             </View>
-            <Image style={styles.bottom} source={require("../assets/pieds_page1.png")}/>
+
+          </View>
+              <Image style={styles.bottom} source={require("../assets/pieds_page1.png")}/>
         </View>
       </SafeAreaView>
     );
@@ -137,11 +132,11 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       zIndex:2
-
     },
     bottom: {
       width: 350,
       height: 80,
+      
       marginTop:80
     },
     top:{
@@ -149,7 +144,6 @@ const styles = StyleSheet.create({
       height: 160,
       zIndex: 1,
       marginLeft:-27
-
     },
     connect:{
       backgroundColor:'rgb(255,250,250)',
@@ -159,7 +153,7 @@ const styles = StyleSheet.create({
       borderRadius:15,
       paddingTop:40,
       paddingLeft:10,
-      zIndex: 3,
+      zIndex: 2,
       borderColor:'rgba(254,163,71,0.3)',
     },
     email:{
@@ -174,11 +168,11 @@ const styles = StyleSheet.create({
       width:200,
       backgroundColor:'whitesmoke',
       lineHeight:30,
+      zIndex:4
     },
     inputMax:{
       marginTop:30,
-      flex:1
-
+      flex:1,
     },
     butt:{
       flex:1,
@@ -188,7 +182,6 @@ const styles = StyleSheet.create({
       padding:5,
       textAlign:'center',
       alignContent: "center",
-      marginTop:25
     },
     button:{
       width:20
@@ -196,12 +189,13 @@ const styles = StyleSheet.create({
     logo:{
       flex:1,
       justifyContent:"center",
-      marginTop:40
+      padding:10,
+      
+      width:250,
     },
     logo2:{
       height: 30, 
       width: 100,
-      justifyContent:"center",
     },
     forgot:{
       width:180,
@@ -232,11 +226,11 @@ const styles = StyleSheet.create({
     },
     butt3:{
       
-      color:'black',
+      color:'grey',
 
     },
     butt4:{
-      color:'grey',
+      color:'black',
 
     },
     logoRow:{
@@ -256,20 +250,20 @@ const styles = StyleSheet.create({
     logoLinear2:{
       padding:8,
       width:90,
-      borderRadius:20,
+      borderRadius:8,
       marginTop:60,
     },
     buttDis:{
       color:"darkkhaki",
-      height:70,
-      width:70,
+      height:40,
+      width:40,
       marginRight:15,
       alignItems:'center',
       display:'flex',
       textAlign:'center',
       lineHeight:30,
       justifyContent:'center',
-      borderRadius: 70/2,
+      borderRadius: 40/2,
         }
 
 
