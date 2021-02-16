@@ -7,3 +7,6 @@ L'application se développe sur **React Native** et **PHP** pour le back-end.
 
 ## Pages réalisées 
 
+| Accueil | Inscription | Connexion |
+|---------|-------------|-----------|
+|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/home1.jpeg"/>|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/inscription.jpg"/>|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/connexion.jpg"/>
