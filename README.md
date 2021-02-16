@@ -17,3 +17,10 @@ L'application se développe sur **React Native** et **PHP** pour le back-end.
 | Première page | Navigation | Choix de recettes par pays |
 |---------|-------------|-----------|
 |<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/accueil.jpeg"/>|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/nav-1.jpeg"/>|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/recettes.jpeg"/>
+
+
+## Récupérer le projet
+
+- Faire `git clone https://github.com/PaolaMBIA/Application-mobile-du-tourisme-au-Cameroun.git`
+- Dans le terminal du repertoire dans lequel vous avez cloné le projet, lancer la commande `yarn` ou `npm install` pour installer toutes les dépendances
+- Puis la commande `yarn start` ou `npm start` pour démarrer le projet
