@@ -6,7 +6,14 @@ L'application se développe sur **React Native** et **PHP** pour le back-end.
 
 
 ## Pages réalisées 
+<br/>
 
 | Accueil | Inscription | Connexion |
 |---------|-------------|-----------|
 |<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/home1.jpeg"/>|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/inscription.jpg"/>|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/connexion.jpg"/>
+<br/>
+<br/>
+
+| Première page | Navigation | Choix de recettes par pays |
+|---------|-------------|-----------|
+|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/accueil.jpeg"/>|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/nav-1.jpeg"/>|<img width=200 src="https://github.com/Afro-tchop/Afro/blob/master/recettes.jpeg"/>
